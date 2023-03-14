@@ -13,11 +13,18 @@ export type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
+  noClose?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const Modal = ({ children, isOpen, onClose, title = '' }: ModalProps) => {
+export const Modal = ({
+  children,
+  isOpen,
+  onClose,
+  title = '',
+  noClose = false,
+}: ModalProps) => {
   const handleKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && !noClose) {
       onClose();
     }
   };
@@ -27,9 +34,11 @@ const Modal = ({ children, isOpen, onClose, title = '' }: ModalProps) => {
       <ModalContent>
         <ModalHeader>
           <Text>{title}</Text>
-          <ModalCloseButton onClick={onClose}>
-            <X size={22} />
-          </ModalCloseButton>
+          {!noClose && (
+            <ModalCloseButton onClick={onClose}>
+              <X size={22} />
+            </ModalCloseButton>
+          )}
         </ModalHeader>
         <ModalBody>{children}</ModalBody>
       </ModalContent>

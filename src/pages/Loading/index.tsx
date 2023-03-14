@@ -5,8 +5,7 @@ import { LoadingContainer } from './styled';
 
 const Loading = () => {
   const navigate = useNavigate();
-
-  const baseURL = import.meta.env.VITE_BASE_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetch(`${baseURL}/health`)
@@ -19,7 +18,7 @@ const Loading = () => {
       })
       .catch((error: Error) => {
         toast.error(error.message);
-        return navigate('/api-error');
+        return navigate('/error-page');
       });
   }, []);
 

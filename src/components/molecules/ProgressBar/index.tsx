@@ -39,7 +39,7 @@ const StyledProgressBar = styled.div<ProgressBarProps>`
     `};
 `;
 
-const ProgressBar = ({ currentValue }: ProgressBarProps) => {
+export const ProgressBar = ({ currentValue }: ProgressBarProps) => {
   function calcProgress() {
     return (100 * (currentValue / 100)) / 25;
   }

@@ -12,7 +12,7 @@ export type VoteModalProps = {
   confirmVote: () => void;
 };
 
-const VoteModal = ({
+export const VoteModal = ({
   isOpen,
   choice,
   onClose,

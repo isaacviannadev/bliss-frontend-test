@@ -1,6 +1,6 @@
 import { FilePlus, SealQuestion } from '@phosphor-icons/react';
-import { getFormattedDate } from '../../../helpers';
 import { QuestionProps } from '../../../types/question';
+import { getFormattedDate } from '../../../utils';
 import Card from '../../ui/Card';
 import {
   QuestionChoices,
@@ -17,7 +17,7 @@ type SingleQuestionProps = {
   handleClick: (id: number) => void;
 };
 
-const Question = ({ question, handleClick }: SingleQuestionProps) => {
+export const Question = ({ question, handleClick }: SingleQuestionProps) => {
   const handleKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter' || e.code === 'Space') {
       handleClick(question.id);

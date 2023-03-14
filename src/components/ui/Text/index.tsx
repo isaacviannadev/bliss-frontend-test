@@ -13,7 +13,7 @@ export const StyledText = styled.p<TextProps>`
   text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'none')};
 `;
 
-const Text = ({
+export const Text = ({
   children,
   small = false,
   capitalize = false,

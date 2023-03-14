@@ -1,7 +1,7 @@
 import { EnvelopeSimple, Link, PaperPlaneTilt } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { validateEmail } from '../../../helpers';
+import { validateEmail } from '../../../utils';
 import Button from '../../ui/Button';
 import Input from '../../ui/Input';
 import Text from '../../ui/Text';
@@ -14,7 +14,7 @@ type ShareScreenModalProps = {
   onClose: () => void;
 };
 
-const ShareScreenModal = ({
+export const ShareScreenModal = ({
   isOpen = false,
   onClose,
 }: ShareScreenModalProps) => {

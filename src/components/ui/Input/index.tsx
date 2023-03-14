@@ -17,7 +17,7 @@ type InputProps = {
   isSearch?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-const Input = ({
+export const Input = ({
   id,
   type = 'text',
   label,

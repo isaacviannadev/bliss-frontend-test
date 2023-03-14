@@ -24,7 +24,7 @@ const StyledCard = styled.div`
   }
 `;
 
-const Card = ({ children }: CardProps) => {
+export const Card = ({ children }: CardProps) => {
   return <StyledCard>{children}</StyledCard>;
 };
 
