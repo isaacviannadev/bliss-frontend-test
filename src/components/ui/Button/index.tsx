@@ -11,7 +11,7 @@ export type ButtonProps = {
   size?: TypesOfSizes;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({
+export const Button = ({
   children,
   variant = 'primary',
   icon,
