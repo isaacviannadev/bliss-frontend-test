@@ -2,12 +2,13 @@ import { CaretLeft } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
-import { ActionsContainer } from '../../components/LayoutHOC/HeaderSearch/styled';
-import Header from '../../components/molecules/Header';
-import ProgressBar from '../../components/molecules/ProgressBar';
-import ShareScreenModal from '../../components/molecules/ShareScreenModal';
-import VoteModal from '../../components/molecules/VoteModal';
-import Button from '../../components/ui/Button';
+import {
+  ProgressBar,
+  ShareScreenModal,
+  VoteModal,
+} from '../../components/molecules';
+import { ActionsContainer } from '../../components/molecules/HeaderSearch/styled';
+import { Button, Header } from '../../components/ui';
 import { ChoiceProps, QuestionProps } from '../../types/question';
 import {
   BackButton,
@@ -29,7 +30,7 @@ const Detail = () => {
     votes: 1,
   });
 
-  const baseURL = import.meta.env.VITE_BASE_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const navigateBack = () => {
     return history.back();
