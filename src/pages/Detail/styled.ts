@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { QuestionContent } from '../../components/molecules/Question/styled';
 
 export const DetailContainer = styled.div`
   display: flex;
@@ -10,6 +9,7 @@ export const DetailContainer = styled.div`
   height: 100vh;
   padding: 2rem;
   padding-top: 7.6rem;
+  position: relative;
 `;
 
 export const BackButton = styled.button`
@@ -28,25 +28,42 @@ export const QuestionDetail = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  max-width: 80rem;
   height: fit-content;
   gap: 1rem;
   padding: 2rem;
   background-color: #fff;
   border-radius: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 export const QuestionImage = styled.img`
-  width: 100%;
   height: auto;
-  max-width: 60rem;
+  width: 100%;
   border-radius: 1rem;
 `;
 
-export const QuestionInfo = styled(QuestionContent)`
+export const QuestionInfo = styled.div`
+  display: flex;
+  flex-direction: column;
   width: fit-content;
   height: fit-content;
   padding: 2rem 1rem;
   justify-content: start;
+  min-width: 30rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+    width: 100%;
+
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
 `;
 
 export const OptionsDetail = styled.div`
@@ -94,5 +111,15 @@ export const OptionButton = styled.button`
   &:hover::before {
     right: -6rem;
     opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    &::before {
+      display: none;
+    }
+
+    &:hover::before {
+      display: none;
+    }
   }
 `;

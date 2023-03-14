@@ -32,6 +32,14 @@ export const QuestionWrapper = styled.div`
       bottom: 0;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    &::after {
+      display: none;
+    }
+  }
 `;
 
 export const QuestionImageWrapper = styled.div`
@@ -46,6 +54,11 @@ export const QuestionImageWrapper = styled.div`
     height: auto;
     object-fit: cover;
   }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    height: 8rem;
+  }
 `;
 
 export const QuestionContent = styled.div`
@@ -53,7 +66,7 @@ export const QuestionContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 0.8rem 1.6rem;
 `;
 
@@ -66,6 +79,11 @@ export const QuestionTitle = styled.div`
   h2 {
     font-size: 1.8rem;
     font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.6rem;
+    }
   }
 `;
 
@@ -86,8 +104,7 @@ export const QuestionInfoItem = styled.div`
 export const QuestionChoices = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.4rem;
+  justify-content: space-between;
 
   p {
     display: flex;
@@ -100,5 +117,11 @@ export const QuestionChoices = styled.div`
     border-radius: 0.8rem;
     padding: 0.8rem 1.2rem;
     background-color: #7ffed4;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      padding: 0.8rem 1rem;
+    }
   }
 `;
