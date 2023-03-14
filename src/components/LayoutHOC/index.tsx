@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+import HeaderSearch from './HeaderSearch';
 import { LayoutContainer } from './styled';
 
 export const withLayout =
@@ -7,7 +7,7 @@ export const withLayout =
   ({ ...props }: any) => {
     return (
       <LayoutContainer>
-        <Header />
+        <HeaderSearch />
         <Component {...props} />
       </LayoutContainer>
     );
