@@ -23,7 +23,7 @@ const StyledProgressBar = styled.div<ProgressBarProps>`
         left: -1rem;
         height: 100%;
         background-color: greenyellow;
-        border-radius: 10px;
+        border-radius: 1rem;
         width: ${currentValue}%;
         animation: progress 1s ease-in-out;
       }
