@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { LoadingContainer } from './styled';
 
@@ -6,19 +8,20 @@ const Loading = () => {
 
   const baseURL = import.meta.env.VITE_BASE_URL;
 
-  const healthCheck = async () => {
-    const response = await fetch(`${baseURL}/health`);
-
-    const data = await response.json();
-
-    if (data.status === 'OK') {
-      return navigate('/questions');
-    }
-
-    return navigate('/api-error');
-  };
-
-  healthCheck();
+  useEffect(() => {
+    fetch(`${baseURL}/health`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === 'OK') {
+          toast.success('API is up and running!');
+          return navigate('/questions');
+        }
+      })
+      .catch((error: Error) => {
+        toast.error(error.message);
+        return navigate('/api-error');
+      });
+  }, []);
 
   return (
     <LoadingContainer>
