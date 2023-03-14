@@ -2,13 +2,13 @@ import { MagnifyingGlass, Trash } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import useDebounce from '../../../hooks/useDebounce';
-import Header from '../../molecules/Header';
-import ShareScreenModal from '../../molecules/ShareScreenModal';
 import Button from '../../ui/Button';
+import Header from '../../ui/Header';
 import Input from '../../ui/Input';
+import ShareScreenModal from '../ShareScreenModal';
 import { ActionsContainer, FilterContainer } from './styled';
 
-const HeaderSearch = () => {
+export const HeaderSearch = () => {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [params, setParams] = useState<string>(
