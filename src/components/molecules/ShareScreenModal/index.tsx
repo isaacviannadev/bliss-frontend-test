@@ -7,7 +7,11 @@ import Input from '../../ui/Input';
 import Text from '../../ui/Text';
 
 import Modal from '../Modal';
-import { ShareScreenContent, ShareScreenTitle } from './styled';
+import {
+  ShareScreenBody,
+  ShareScreenContent,
+  ShareScreenTitle,
+} from './styled';
 
 type ShareScreenModalProps = {
   isOpen: boolean;
@@ -62,25 +66,28 @@ export const ShareScreenModal = ({
         <ShareScreenTitle>
           Share screen <PaperPlaneTilt size={22} />
         </ShareScreenTitle>
-        <Text>Who do you want to send it to?</Text>
 
-        <Input
-          id='email'
-          icon={<EnvelopeSimple size={22} />}
-          type='email'
-          placeholder='jhondoe@xyz.com'
-          value={email}
-          onChange={({ target: { value } }) => {
-            setEmail(value);
-          }}
-        />
-        <Input
-          id='Url'
-          icon={<Link size={22} />}
-          type='text'
-          defaultValue={window.location.href}
-          readOnly
-        />
+        <ShareScreenBody>
+          <Text>Who do you want to send it to?</Text>
+
+          <Input
+            id='email'
+            icon={<EnvelopeSimple size={22} />}
+            type='email'
+            placeholder='jhondoe@xyz.com'
+            value={email}
+            onChange={({ target: { value } }) => {
+              setEmail(value);
+            }}
+          />
+          <Input
+            id='Url'
+            icon={<Link size={22} />}
+            type='text'
+            defaultValue={window.location.href}
+            readOnly
+          />
+        </ShareScreenBody>
         <Button
           size='small'
           variant='primary'

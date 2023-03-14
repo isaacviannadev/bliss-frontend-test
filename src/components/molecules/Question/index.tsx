@@ -32,7 +32,7 @@ export const Question = ({ question, handleClick }: SingleQuestionProps) => {
         tabIndex={1}
       >
         <QuestionImageWrapper>
-          <img src={question.thumb_url} alt={question.question} />
+          <img src={question.image_url} alt={question.question} />
         </QuestionImageWrapper>
 
         <QuestionContent>

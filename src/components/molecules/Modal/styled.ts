@@ -28,6 +28,14 @@ export const ModalContent = styled.div`
   border-radius: 1.4rem;
   border: 1px solid #62d9b1;
   box-shadow: 0 3px 12px 4px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 768px) {
+    max-height: 100%;
+    max-width: 100%;
+
+    border-radius: 0;
+    justify-content: space-between;
+  }
 `;
 
 export const ModalHeader = styled.div`
@@ -86,5 +94,10 @@ export const ModalBody = styled.div`
     &:hover {
       background: #256651;
     }
+  }
+  @media (max-width: 768px) {
+    max-height: 100%;
+    border-radius: 0;
+    justify-content: space-between;
   }
 `;
